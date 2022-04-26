@@ -1,5 +1,5 @@
-# Merkel Tree
-## 1.  Introduction
+# Merkel Tree / Hash Tree
+# 1.  Introduction
 
 A Merkle tree is a hash-based data structure that is a generalization of the hash list. It is a tree structure in which each leaf node is a hash of a block of data, and each non-leaf node is a hash of its children. Typically, Merkle trees have a branching factor of 2, meaning that each node has up to 2 children.
 
@@ -10,7 +10,24 @@ A hash function maps an input to a fixed output and this output is called hash. 
 - If we want to know where data change has occurred, then we can check if data is consistent with root hash and we will not have to traverse the whole structure but only a small part of the structure.
 - The root hash is used as the fingerprint for the entire data.
 
-## 2. Architecture of Merkel Tree
+## Working of Merkel tree
+A Merkle tree totals all transactions in a block and generates a digital fingerprint of the entire set of operations, allowing the user to verify whether it includes a transaction in the block.
+- Merkle trees are made by hashing pairs of nodes repeatedly until only one hash remains; this hash is known as the Merkle Root or the Root Hash.
+- They're built from the bottom, using Transaction IDs, which are hashes of individual transactions. 
+- Each non-leaf node is a hash of its previous hash, and every leaf node is a hash of transactional data.
+
+## Benefits of Merkle Tree in Blockchain
+
+Merkle trees provide four significant advantages - 
+
+- Validate the data's integrity: It can be used to validate the data's integrity effectively.
+- Takes little disk space: Compared to other data structures, the Merkle tree takes up very little disk space.
+- Tiny information across networks: Merkle trees can be broken down into small pieces of data for verification.
+- Efficient Verification: The data format is efficient, and verifying the data's integrity takes only a few moments.
+
+
+
+# 2. Architecture of Merkel Tree
 
 In the blockchain, each block has a Merkle root stored in the block header. Merkle tree allows every node on the network to verify individual transaction without having to download and validate the entire block. If a copy of the block in the blockchain networks has the same Merkle root to another, then the transactions in that block are the same. Even a bit of incorrect data would lead to vastly different Merkle roots because of the properties of the hash. Therefore, it is not necessary to verify the amount of required information .
 
@@ -22,7 +39,7 @@ In the blockchain, each block has a Merkle root stored in the block header. Merk
 
 `Verification Mechanism in a Merkel Tree Transaction `
 
-## 3. Algorithm & Steps
+# 3. Algorithm & Steps
 There are Various Functions Available in a Merkel Tree Implementation, So We have an Algorithm for all the functions to be implemented.
 
 ### Algorithm of find function in Merkle tree
