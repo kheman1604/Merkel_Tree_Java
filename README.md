@@ -26,14 +26,11 @@ In the blockchain, each block has a Merkle root stored in the block header. Merk
 There are Various Functions Available in a Merkel Tree Implementation, So We have an Algorithm for all the functions to be implemented.
 
 ### Algorithm of find function in Merkle tree
+
 - Step 1: We will take tree and key as parameters.
-
 - Step 2: If the tree is null then we will return null.
-
 - Step 3: If the tree->key is equal to the key we will return the tree.
-
 - Step 4: If the key is smaller than tree->key then we will return find(tree->left, key)
-
 - Step 5: else return find(tree->right, key)
 
 ### Algorithm to add a node in Merkle tree.
